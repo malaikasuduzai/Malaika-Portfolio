@@ -1,0 +1,132 @@
+/* ============================================================
+   responsive.css — breakpoint adjustments
+   ============================================================ */
+
+/* ---- Large tablets / small laptops ---- */
+@media (max-width: 991.98px) {
+  section { padding: 4.5rem 0; }
+
+  .navbar-collapse {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+  }
+  .nav-link-custom { padding: 0.6rem 0.4rem !important; }
+  .nav-cta { justify-content: center; margin-top: 0.5rem; }
+
+  .hero {
+    padding-top: 6.5rem;
+    text-align: center;
+  }
+  .hero-bio {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .d-flex.gap-3 { justify-content: center; }
+  .hero-social {
+    justify-content: center;
+  }
+  .hero-photo-wrap {
+    margin-top: 2.5rem;
+    max-width: 280px;
+  }
+  .tag-chip.top { left: -4%; }
+  .tag-chip.bottom { right: -4%; }
+
+  .contact-section { text-align: left; }
+
+  /* Footer — selectors match the actual markup (.site-footer, .footer-social,
+     .footer-nav, .footer-contact); previous rules targeted classes
+     (.footer-top, .footer-tagline, .footer-contact-list) that don't exist
+     in index.html and never applied. */
+  .site-footer { text-align: center; }
+  .footer-social { justify-content: center; }
+  .footer-nav { justify-content: center; }
+  .footer-contact { text-align: center; }
+}
+
+/* ---- Tablets / phones ---- */
+@media (max-width: 767.98px) {
+  .section-heading { margin-bottom: 1.8rem; }
+  .about-card, .exp-card, .contact-card { padding: 1.5rem; }
+  .stat-row { flex-wrap: wrap; gap: 1rem; }
+  .stat-block { flex: 1 1 40%; }
+
+  .skills-section,
+  .projects-section,
+  .experience-section {
+    padding: 4rem 0;
+  }
+
+  .exp-card-head { flex-wrap: wrap; }
+  .exp-status { margin-left: 0; }
+  .exp-meta {
+    gap: 0.8rem;
+    flex-direction: column;
+  }
+
+  .skill-card,
+  .project-card,
+  .exp-card {
+    padding: 1.25rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .services-section,
+  .education-section,
+  #certifications {
+    padding: 4rem 0 !important;
+  }
+  .education-section .about-card { padding: 1.25rem; }
+  .education-section .stat-row { gap: 14px; }
+  #certifications .card { margin-bottom: 1rem; }
+
+  .contact-section { padding: 4rem 0; }
+  .contact-info-card, .contact-form {
+    padding: 1.5rem;
+  }
+  .site-footer { padding: 50px 0 24px; text-align: center; }
+
+  .footer-social,
+  .footer-nav,
+  .footer-contact {
+    margin-bottom: 1.5rem;
+  }
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-nav a { margin: 0; }
+  .footer-social a {
+    width: 42px;
+    height: 42px;
+    margin: 5px;
+  }
+  .footer-contact p { font-size: 14px; }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 575.98px) {
+  .hero-name { font-size: 2.2rem; }
+  .hero-title { font-size: 1rem; }
+  .btn-primary-custom, .btn-outline-custom { width: 100%; justify-content: center; }
+  .hero .d-flex.gap-3 { flex-direction: column; }
+
+  .glow-1, .glow-2, .glow-3 { filter: blur(70px); opacity: 0.2; }
+
+  .back-to-top { right: 1rem; bottom: 1rem; width: 40px; height: 40px; }
+
+  .services-section .skill-card,
+  #certifications .card {
+    padding: 1rem;
+  }
+  .education-section .timeline-mini { padding-left: 14px; }
+  #certifications .card-title { font-size: 1rem; }
+}

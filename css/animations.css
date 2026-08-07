@@ -1,0 +1,214 @@
+/* ============================================================
+   animations.css — hover effects, scroll reveal, 3D elements
+   ============================================================ */
+
+/* ---------- HOVER EFFECTS ---------- */
+.skill-card {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  transform-style: preserve-3d;
+}
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--glass-border-hover);
+}
+
+.about-card,
+.education-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.about-card:hover,
+.education-card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 0 40px rgba(0,217,192,0.12);
+}
+
+.project-card {
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  transform-style: preserve-3d;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6);
+}
+
+.project-img-wrap img {
+  transition: transform 0.5s ease;
+}
+.project-card:hover .project-img-wrap img {
+  transform: scale(1.08);
+}
+
+.project-overlay {
+  transition: opacity 0.3s ease;
+}
+.project-img-wrap:hover .project-overlay {
+  opacity: 1;
+}
+
+.proj-icon-btn {
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+.project-card:hover .proj-icon-btn {
+  transform: translateY(0);
+}
+
+.project-links a {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.project-links a:hover {
+  color: var(--glass-border-hover);
+  border-color: var(--glass-border-hover);
+}
+
+.bar-fill {
+  transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+.bar-fill.in-view {
+  width: var(--level);
+}
+
+#certifications .card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#certifications .card:hover {
+  transform: translateY(-4px);
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6);
+}
+.exp-card{
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.exp-card:hover{
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 0 40px rgba(59,130,246,0.15);
+}
+.form-control-custom {
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.form-control-custom:hover,
+.form-control-custom:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 15px rgba(0,217,192,0.25);
+}
+
+.contact-info-item {
+  transition: transform .2s ease;
+}
+.contact-info-item:hover {
+  transform: translateX(4px);
+}
+.contact-links a {
+  transition: all 0.2s ease;
+}
+.contact-links a:hover {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+}
+
+.footer-social a,
+.footer-nav a {
+  transition: all .3s ease;
+}
+.footer-social a:hover {
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  transform: translateY(-5px);
+}
+.footer-nav a:hover {
+  color: var(--cyan);
+}
+.footer-contact p {
+  transition: .3s;
+}
+.footer-contact p:hover {
+  color: #fff;
+}
+
+/* ---------- FADE-IN / SCROLL REVEAL ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* variant: fade only, no slide — good for hero elements */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.fade-in.in-view {
+  opacity: 1;
+}
+
+/* stagger children of a container (e.g. skill cards, project cards) */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-stagger.in-view > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.in-view > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.in-view > *:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger.in-view > *:nth-child(3) { transition-delay: 0.25s; }
+.reveal-stagger.in-view > *:nth-child(4) { transition-delay: 0.35s; }
+.reveal-stagger.in-view > *:nth-child(5) { transition-delay: 0.45s; }
+.reveal-stagger.in-view > *:nth-child(6) { transition-delay: 0.55s; }
+
+/* ---------- 3D ELEMENT: tilt-on-hover card ---------- */
+.tilt-card {
+  perspective: 1000px;
+}
+.tilt-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+/* 3D floating photo frame in hero */
+.hero-photo-frame {
+  transform-style: preserve-3d;
+}
+@keyframes orbitRotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes keepHorizontal{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(-360deg);
+    }
+}
+
+.orbit-ring{
+    animation:orbitRotate 18s linear infinite;
+}
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .fade-in, .reveal-stagger > *, .hero-photo-frame, .orbit-ring {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
