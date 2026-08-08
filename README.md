@@ -24,17 +24,20 @@ The website focuses on:
 - Call-to-action buttons
 - Animated visual elements
 
-### 2. About Section
+### 2. Branding
+- Custom "MS" logo mark, used as both the browser favicon and the navbar brand icon next to the "Malaika.dev" wordmark
+
+### 3. About Section
 - Short professional introduction
 - Academic and career information
 - Personal profile details
 
-### 3. Skills Section
+### 4. Skills Section
 - Technical skills
 - Animated skill/progress bars
 - Interactive card effects
 
-### 4. Projects Section
+### 5. Projects Section
 The portfolio showcases development projects, including:
 - Blood Donation System
 - Virtual Classroom Platform
@@ -42,20 +45,20 @@ The portfolio showcases development projects, including:
 
 Project images and related assets are stored in the `images` folder.
 
-### 5. Education / Experience
+### 6. Education / Experience
 - Academic background
 - Internship and development experience
 - Timeline-style presentation
 
-### 6. Statistics
+### 7. Statistics
 The website includes animated statistics such as:
 - CGPA: 3.75 / 4.00
 - Expected Graduation: 2026
 
-### 7. Contact Section
-A contact form allows visitors to send a message. The contact form uses **EmailJS** for sending messages without requiring a separate backend server.
+### 8. Contact Section
+A contact form allows visitors to send a message. The contact form uses **EmailJS** for sending messages without requiring a separate backend server. Both the contact info card and the contact form use a hover-highlight border/glow effect, consistent with the card styling used across the rest of the site (About, Skills, Projects).
 
-### 8. Animations and Interactive Effects
+### 9. Animations and Interactive Effects
 The website includes:
 - Scroll reveal animations
 - Animated statistics
@@ -93,7 +96,8 @@ PORTFOLIO/
 ├── images/
 │   ├── avatar.png
 │   ├── blood-donation.png
-│   └── eduspace.png
+│   ├── eduspace.png
+│   └── favicon.svg
 │
 ├── js/
 │   └── script.js
@@ -131,7 +135,7 @@ Contains the website's interactive functionality, including:
 - Timeline animation
 
 **`images/`**
-Contains images used by the portfolio, including the profile avatar and project images.
+Contains images used by the portfolio, including the profile avatar, project images, and the site favicon (`favicon.svg`), which also doubles as the navbar logo icon.
 
 **`assets/`**
 Contains supporting portfolio files such as project demo videos and the CV/resume.
@@ -208,8 +212,10 @@ Before final deployment, the following areas were tested:
 - Statistics counter
 - 3D card effects
 - Contact form
+- Contact card hover highlight
 - Project links
 - Images and videos
+- Favicon rendering across browsers
 - CV/resume access
 - Mobile layout
 - Browser console errors
@@ -236,6 +242,14 @@ The project contains the following portfolio assets:
 - Virtual Classroom demo video
 - Project images
 - Profile/avatar image
+- Site favicon / logo mark
+
+## Recent Updates
+
+- Removed the embedded map from the Contact section, as it added little value to a personal portfolio
+- Added a custom SVG favicon (initials-based "MS" mark in the site's blue-to-cyan brand gradient), replacing the default browser icon
+- Reused the favicon as the navbar logo icon next to the "Malaika.dev" wordmark
+- Added a hover-highlight (border glow) to the contact info card and contact form, matching the existing card style used elsewhere on the site
 
 ## Future Improvements
 
