@@ -130,6 +130,13 @@ body {
   font-size: 1.3rem;
 }
 
+.brand-mark-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
 .brand-mark span {
   color: var(--blue-bright);
 }
@@ -879,6 +886,22 @@ body {
 }
 
 /* ================= CONTACT ================= */
+.contact-info-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: border-color .3s ease, box-shadow .3s ease;
+  height: 100%;
+}
+
+.contact-info-card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 0 40px rgba(0, 217, 192, 0.12);
+}
+
 .contact-info-card h3 {
   font-family: var(--font-display);
   font-weight: 600;
@@ -953,19 +976,19 @@ body {
   color: var(--ink-soft);
 }
 
-.map-embed {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--glass-border);
-  filter: grayscale(0.3) invert(0.92) contrast(0.9);
-}
-
 /* ---- Contact form ---- */
 .contact-form {
   background: var(--surface);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   padding: 2.2rem;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.contact-form:hover,
+.contact-form:focus-within {
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 0 40px rgba(0, 217, 192, 0.12);
 }
 
 .form-label-custom {
