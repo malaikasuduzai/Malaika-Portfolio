@@ -250,3 +250,27 @@ timelineItems.forEach(item => {
   timelineObserver.observe(item);
 
 });
+// Generic project demo modal
+(function () {
+  const modalEl = document.getElementById('demoModalGeneric');
+  if (!modalEl) return;
+  const video = document.getElementById('genericDemoVideo');
+  const missing = document.getElementById('genericDemoMissing');
+  const liveLink = document.getElementById('genericDemoLive');
+  const title = document.getElementById('demoModalGenericLabel');
+  document.querySelectorAll('[data-demo-video]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      title.textContent = btn.dataset.demoTitle + ' — Demo';
+      liveLink.href = btn.dataset.demoLive;
+      missing.hidden = true;
+      video.hidden = false;
+      video.poster = btn.dataset.demoPoster;
+      video.onerror = function () { video.hidden = true; missing.hidden = false; };
+      video.src = btn.dataset.demoVideo;
+      bootstrap.Modal.getOrCreateInstance(modalEl).show();
+    });
+  });
+  modalEl.addEventListener('hidden.bs.modal', function () {
+    video.pause(); video.removeAttribute('src'); video.load();
+  });
+})();
