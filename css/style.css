@@ -1296,10 +1296,9 @@ button:hover~.cursor-outline {
 
   border: none;
 
-  background: white;
+  background: white
 
 }
-
 /* New project actions */
 .project-actions {
   display: flex;
